@@ -72,7 +72,7 @@
                               <div class="col-xs-12">
                                 <div class="form-group label-floating">
                                   <label class="control-label"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp; Ingrese su nombre de usuario</label>
-                                    <input class="form-control" type="text" required name="clien-name" title="Ingrese su nombre. Máximo 9 caracteres (solamente letras y numeros sin espacios)" pattern="[a-zA-Z0-9]{1,9}" maxlength="9">
+                                    <input class="form-control" type="text" required name="clien-name" title="Ingrese su nombre de usuario. Máximo 9 caracteres (solamente letras y numeros sin espacios)" pattern="[a-zA-Z0-9]{1,9}" maxlength="9">
                                 </div>
                               </div>
                               <div class="col-xs-12 col-sm-6">

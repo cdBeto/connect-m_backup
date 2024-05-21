@@ -1,9 +1,5 @@
 <p class="lead">
-<<<<<<< HEAD
     
-=======
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, culpa quasi tempore assumenda, perferendis sunt. Quo consequatur saepe commodi maxime, sit atque veniam blanditiis molestias obcaecati rerum, consectetur odit accusamus.
->>>>>>> 1581a131de9b3c52b40731aa4004c9bade563925
 </p>
 <ul class="breadcrumb" style="margin-bottom: 5px;">
     <li>
@@ -69,7 +65,7 @@
                               </div>
                             </div>
                             <div class="col-xs-12">
-                                <legend>Categoría, proveedor y estado</legend>
+                                <legend>Categoría, local y estado</legend>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4">
                               <div class="form-group">
@@ -86,7 +82,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-4">
                               <div class="form-group">
-                                <label>Proveedor</label>
+                                <label>Local</label>
                                 <select class="form-control" name="prod-codigoP">
                                     <?php
                                         $proveedoresc=  ejecutarSQL::consultar("SELECT * FROM proveedor");

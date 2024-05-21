@@ -1,21 +1,20 @@
 <p class="lead">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, culpa quasi tempore assumenda, perferendis sunt. Quo consequatur saepe commodi maxime, sit atque veniam blanditiis molestias obcaecati rerum, consectetur odit accusamus.
-</p>
+    </p>
 <ul class="breadcrumb" style="margin-bottom: 5px;">
     <li>
         <a href="configAdmin.php?view=provider">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp; Nuevo Proveedor
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp; Nuevo Local
         </a>
     </li>
     <li>
-        <a href="configAdmin.php?view=providerlist"><i class="fa fa-list-ol" aria-hidden="true"></i> &nbsp; Proveedores de la tienda</a>
+        <a href="configAdmin.php?view=providerlist"><i class="fa fa-list-ol" aria-hidden="true"></i> &nbsp; Locales actuales</a>
     </li>
 </ul>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
             <div class="container-form-admin">
-                <h3 class="text-primary text-center">Agregar un nuevo proveedor</h3>
+                <h3 class="text-primary text-center">Agregar un nuevo local</h3>
                 <form action="process/regprove.php" method="POST" class="FormCatElec" data-form="save">
                     <div class="container-fluid">
                         <div class="row">
@@ -51,7 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    <p class="text-center"><button type="submit" class="btn btn-primary btn-raised">Agregar proveedor</button></p>
+                    <p class="text-center"><button type="submit" class="btn btn-primary btn-raised">Agregar local</button></p>
                 </form>
             </div>
         </div>

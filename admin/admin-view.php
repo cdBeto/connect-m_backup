@@ -1,9 +1,5 @@
 <p class="lead">
-<<<<<<< HEAD
     
-=======
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, culpa quasi tempore assumenda, perferendis sunt. Quo consequatur saepe commodi maxime, sit atque veniam blanditiis molestias obcaecati rerum, consectetur odit accusamus.
->>>>>>> 1581a131de9b3c52b40731aa4004c9bade563925
 </p>
 <ul class="breadcrumb" style="margin-bottom: 5px;">
     <li>

@@ -14,7 +14,7 @@
     <section id="prove-product-cat-config">
         <div class="container">
           <div class="page-header">
-            <h1>Panel de administración <small class="tittles-pages-logo">CONNECT M</small></h1>
+            <h1>Panel de administración <small class="tittles-pages-logo"></small></h1>
           </div>
           <!--====  Nav Tabs  ====-->
           <ul class="nav nav-tabs nav-justified" style="margin-bottom: 15px;">

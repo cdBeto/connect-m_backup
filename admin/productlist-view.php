@@ -1,6 +1,5 @@
 <p class="lead">
-	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum voluptates, corporis nisi dolores cumque obcaecati perferendis, quisquam, ipsa commodi labore molestias dolor itaque nam cupiditate totam, ea dicta? Sit, asperiores?
-</p>
+	</p>
 <ul class="breadcrumb" style="margin-bottom: 5px;">
     <li>
         <a href="configAdmin.php?view=product">
@@ -29,7 +28,7 @@
                               <th class="text-center">Modelo</th>
                               <th class="text-center">Marca</th>
                               <th class="text-center">Stock</th>
-                              <th class="text-center">Proveedor</th>
+                              <th class="text-center">Local</th>
                               <th class="text-center">Estado</th>
                               <th class="text-center">Actualizar</th>
                               <th class="text-center">Eliminar</th>

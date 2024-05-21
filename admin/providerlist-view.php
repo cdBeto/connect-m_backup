@@ -1,14 +1,13 @@
 <p class="lead">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, culpa quasi tempore assumenda, perferendis sunt. Quo consequatur saepe commodi maxime, sit atque veniam blanditiis molestias obcaecati rerum, consectetur odit accusamus.
-</p>
+    </p>
 <ul class="breadcrumb" style="margin-bottom: 5px;">
     <li>
         <a href="configAdmin.php?view=provider">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp; Nuevo Proveedor
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp; Nuevo Local
         </a>
     </li>
     <li>
-        <a href="configAdmin.php?view=providerlist"><i class="fa fa-list-ol" aria-hidden="true"></i> &nbsp; Proveedores de la tienda</a>
+        <a href="configAdmin.php?view=providerlist"><i class="fa fa-list-ol" aria-hidden="true"></i> &nbsp; Locales de la tienda</a>
     </li>
 </ul>
 <div class="container">
@@ -16,7 +15,7 @@
 		<div class="col-xs-12">
             <br><br>
             <div class="panel panel-info">
-                <div class="panel-heading text-center"><h4>Proveedores de la tienda</h4></div>
+                <div class="panel-heading text-center"><h4>Locales de la tienda</h4></div>
               	<div class="table-responsive">
                   <table class="table table-striped table-hover">
                       	<thead>
