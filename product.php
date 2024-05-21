@@ -97,11 +97,7 @@ include './library/consulSQL.php';
                              ?>
                              </p>
                              <?php else: ?>
-<<<<<<< HEAD
-                              <!-- <p>$<?php echo $prod['Precio']; ?></p> -->
-=======
-                              <p>$<?php echo $prod['Precio']; ?></p>
->>>>>>> 1581a131de9b3c52b40731aa4004c9bade563925
+                              <!--<p>$<?php echo $prod['Precio']; ?></p> -->
                              <?php endif; ?>
                              <p class="text-center">
                                  <a href="infoProd.php?CodigoProd=<?php echo $prod['CodigoProd']; ?>" class="btn btn-primary btn-raised btn-sm btn-block"><i class="fa fa-plus"></i>&nbsp; Detalles</a>
