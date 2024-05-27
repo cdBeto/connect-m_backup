@@ -1,0 +1,25 @@
+/* registration.css */
+body {
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container-fluid {
+    padding: 0 15px;
+}
+
+#container-form {
+    margin-top: 20px;
+}
+
+.form-group.label-floating .control-label {
+    top: -20px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #9E9E9E;
+}
+
+.text-center.lead {
+    margin-top: 20px;
+}

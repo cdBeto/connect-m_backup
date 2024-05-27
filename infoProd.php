@@ -26,7 +26,8 @@ include './library/consulSQL.php';
                             <div class="col-xs-12 col-sm-6">
                                 <h3 class="text-center">Información del local</h3>
                                 <br><br>
-                                <h4><strong>Nombre: </strong>'.$fila['NombreProd'].'</h4><br>';
+                                <h4><strong>Nombre: </strong>'.$fila['NombreProd'].'</h4><br>
+                                <p>Te ayudamos a mantener tu laptop, computadora de escritorio, smartphone y tablet en las mejores condiciones. Encuentra componentes y accesorios para optimizar el funcionamiento de tus equipos de cómputo en tu hogar y negocio.</p>';
                         echo '
                             <a href="https://www.facebook.com/" target="_blank">
                                 <i class="fa fa-facebook" aria-hidden="true">&nbsp; Facebook </i> 
@@ -40,7 +41,10 @@ include './library/consulSQL.php';
                             </a><br>
                             <a href="https://www.instagram.com/" target="_blank">
                                 <i class="fa fa-instagram" aria-hidden="true">&nbsp; Instagram </i>
-                            </a><br>';
+                            </a><br>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3389.5848200940613!2d-116.60869122437573!3d31.
+                                83629767407085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d88dff0e5c245d%3A0x7616ab5aa060a6b9!2sEmerick!5e0!3m2!1ses!2smx!4v1716514612898!5m2!1ses!2smx" 
+                                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
                                 if($fila['Stock']>=1){
                                     if($_SESSION['nombreAdmin']!="" || $_SESSION['nombreUser']!=""){
                                         echo '<form action="process/carrito.php" method="POST" class="FormCatElec" data-form="">
