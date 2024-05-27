@@ -7,7 +7,7 @@
         </a>
     </li>
     <li>
-        <a href="configAdmin.php?view=providerlist"><i class="fa fa-list-ol" aria-hidden="true"></i> &nbsp; Locales de la tienda</a>
+        <a href="configAdmin.php?view=providerlist"><i class="fa fa-list-ol" aria-hidden="true"></i> &nbsp; Locales</a>
     </li>
 </ul>
 <div class="container">
@@ -15,7 +15,7 @@
 		<div class="col-xs-12">
             <br><br>
             <div class="panel panel-info">
-                <div class="panel-heading text-center"><h4>Locales de la tienda</h4></div>
+                <div class="panel-heading text-center"><h4>Locales</h4></div>
               	<div class="table-responsive">
                   <table class="table table-striped table-hover">
                       	<thead>
