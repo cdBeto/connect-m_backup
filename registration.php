@@ -10,85 +10,51 @@
     <section id="form-registration">
         <div class="container">
             <div class="page-header">
-              <h1>REGISTRO <small class="tittles-pages-logo"></small></h1>
+                <h1>REGISTRO <small class="tittles-pages-logo"></small></h1>
             </div>
             <div class="row">
                 <div class="col-sm-5 text-center">
                     <figure>
-                      <img src="./assets/img/img-registration.png" alt="store" class="img-responsive">
+                        <img src="./assets/img/img-registration.png" alt="store" class="img-responsive">
                     </figure>
                 </div>
                 <div class="col-sm-7">
                     <div id="container-form">
-                       <p class="text-center lead">Registro de Clientes</p>
-                       <form class="FormCatElec" action="process/regclien.php" role="form" method="POST" data-form="save">
-                          <div class="container-fluid">
-                            <div class="row">
-                              <div class="col-xs-12">
-                                <legend><i class="fa fa-user"></i> &nbsp; Datos personales</legend>
-                              </div>
-                              <div class="col-xs-12">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp; Ingrese su número de cliente</label>
-                                  <input class="form-control" type="text" required name="clien-nit" pattern="[0-9]{1,15}" title="Ingrese su número de Usuario. Solamente números" maxlength="15">
+                        <p class="text-center lead">Registro de Clientes</p>
+                        <form class="FormCatElec" action="process/regclien.php" role="form" method="POST" data-form="save">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <?php
+                                    function createInput($icon, $label, $type, $name, $pattern = "", $title, $maxlength, $additionalClasses = "") {
+                                        echo '
+                                        <div class="col-xs-12' . ($additionalClasses ? ' ' . $additionalClasses : '') . '">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label"><i class="fa ' . $icon . '" aria-hidden="true"></i>&nbsp; ' . $label . '</label>
+                                                <input class="form-control" type="' . $type . '" name="' . $name . '" ' . ($pattern ? 'pattern="' . $pattern . '" ' : '') . 'title="' . $title . '" maxlength="' . $maxlength . '" required>
+                                            </div>
+                                        </div>';
+                                    }
+
+                                    createInput('fa-address-card-o', 'Ingrese su número de cliente', 'text', 'clien-nit', '[0-9]{1,15}', 'Ingrese su número de Usuario. Solamente números', '15');
+                                    createInput('fa-user', 'Ingrese sus nombres', 'text', 'clien-fullname', '[a-zA-Z ]{1,50}', 'Ingrese sus nombres (solamente letras)', '50', 'col-sm-6');
+                                    createInput('fa-user', 'Ingrese sus apellidos', 'text', 'clien-lastname', '[a-zA-Z ]{1,50}', 'Ingrese sus apellidos (solamente letras)', '50', 'col-sm-6');
+                                    createInput('fa-mobile', 'Ingrese su número telefónico', 'tel', 'clien-phone', '', 'Ingrese su número telefónico. Mínimo 8 dígitos máximo 15', '15', 'col-sm-6');
+                                    createInput('fa-envelope-o', 'Ingrese su Email', 'email', 'clien-email', '', 'Ingrese la dirección de su Email', '50', 'col-sm-6');
+                                    createInput('fa-home', 'Ingrese su dirección', 'text', 'clien-dir', '', 'Ingrese la dirección en la que reside actualmente', '100');
+                                    ?>
+                                    <div class="col-xs-12">
+                                        <legend><i class="fa fa-lock"></i> &nbsp; Datos de la cuenta</legend>
+                                    </div>
+                                    <?php
+                                    createInput('fa-user-circle-o', 'Ingrese su nombre de usuario', 'text', 'clien-name', '[a-zA-Z0-9]{1,9}', 'Ingrese su nombre de usuario. Máximo 9 caracteres (solamente letras y números sin espacios)', '9');
+                                    createInput('fa-lock', 'Introduzca una contraseña', 'password', 'clien-pass', '', 'Defina una contraseña para iniciar sesión', '');
+                                    createInput('fa-lock', 'Repita la contraseña', 'password', 'clien-pass2', '', 'Repita la contraseña', '');
+                                    ?>
                                 </div>
-                              </div>
-                              <div class="col-xs-12 col-sm-6">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-user"></i>&nbsp; Ingrese sus nombres</label>
-                                  <input class="form-control" type="text" required name="clien-fullname" title="Ingrese sus nombres (solamente letras)" pattern="[a-zA-Z ]{1,50}" maxlength="50">
-                                </div>
-                              </div>
-                              <div class="col-xs-12 col-sm-6">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-user"></i>&nbsp; Ingrese sus apellidos</label>
-                                  <input class="form-control" type="text" required name="clien-lastname" title="Ingrese sus apellido (solamente letras)" pattern="[a-zA-Z ]{1,50}" maxlength="50">
-                                </div>
-                              </div>
-                              <div class="col-xs-12 col-sm-6">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-mobile"></i>&nbsp; Ingrese su número telefónico</label>
-                                  <input class="form-control" type="tel" required name="clien-phone" maxlength="15" title="Ingrese su número telefónico. Mínimo 8 digitos máximo 15">
-                                </div>
-                              </div>
-                              <div class="col-xs-12 col-sm-6">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp; Ingrese su Email</label>
-                                  <input class="form-control" type="email" required name="clien-email" title="Ingrese la dirección de su Email" maxlength="50">
-                                </div>
-                              </div>
-                              <div class="col-xs-12">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-home"></i>&nbsp; Ingrese su dirección</label>
-                                  <input class="form-control" type="text" required name="clien-dir" title="Ingrese la direción en la reside actualmente" maxlength="100">
-                                </div>
-                              </div>
-                              <div class="col-xs-12">
-                                <legend><i class="fa fa-lock"></i> &nbsp; Datos de la cuenta</legend>
-                              </div>
-                              <div class="col-xs-12">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-user-circle-o" aria-hidden="true"></i>&nbsp; Ingrese su nombre de usuario</label>
-                                  <input class="form-control" type="text" required name="clien-name" title="Ingrese su nombre de usuario. Máximo 9 caracteres (solamente letras y numeros sin espacios)" pattern="[a-zA-Z0-9]{1,9}" maxlength="9">
-                                </div>
-                              </div>
-                              <div class="col-xs-12 col-sm-6">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-lock"></i>&nbsp; Introduzca una contraseña</label>
-                                  <input class="form-control" type="password" required name="clien-pass" title="Defina una contraseña para iniciar sesión">
-                                </div>
-                              </div>
-                              <div class="col-xs-12 col-sm-6">
-                                <div class="form-group label-floating">
-                                  <label class="control-label"><i class="fa fa-lock"></i>&nbsp; Repita la contraseña</label>
-                                  <input class="form-control" type="password" required name="clien-pass2" title="Repita la contraseña">
-                                </div>
-                              </div>
                             </div>
-                          </div>
-                          <p><button type="submit" class="btn btn-primary btn-block btn-raised">Registrarse</button></p>
-                        </form> 
-                    </div> 
+                            <p><button type="submit" class="btn btn-primary btn-block btn-raised">Registrarse</button></p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

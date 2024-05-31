@@ -26,7 +26,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="form-group label-floating">
-                                    <label class="control-label">NIT/CEDULA</label>
+                                    <label class="control-label">ID usuario</label>
                                     <input class="form-control" value="<?php echo $prov['NITProveedor']; ?>" type="text" name="prove-nit" readonly pattern="[0-9]{1,20}" maxlength="20" required="">
                                 </div>
                             </div>

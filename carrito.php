@@ -9,7 +9,7 @@
     <section id="container-pedido">
         <div class="container">
             <div class="page-header">
-              <h1>CARRITO <small class="tittles-pages-logo">CONNECT M</small></h1>
+              <h1>Pagar<small class="tittles-pages-logo">CONNECT M</small></h1>
             </div>
             <br><br><br>
             <div class="row">

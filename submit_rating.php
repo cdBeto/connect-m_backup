@@ -1,5 +1,5 @@
 <?php
-session_start(); // Asegúrate de iniciar la sesión al principio del archivo
+session_start(); 
 
 $connect = new PDO("mysql:host=localhost;dbname=sistema-resenas", "root", "");
 

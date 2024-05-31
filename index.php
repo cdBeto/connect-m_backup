@@ -10,7 +10,6 @@
     <?php include './inc/navbar.php'; ?>
     
     <section id="slider-store" class="carousel slide" data-ride="carousel" style="padding: 0;">
-
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#slider-store" data-slide-to="0" class="active"></li>
@@ -20,24 +19,21 @@
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img src="./assets/img/slider1.jpg" alt="slider1">
-                <div class="carousel-caption">
-                    Emerick
-                </div>
-            </div>
-            <div class="item">
-                <img src="./assets/img/slider2.jpg" alt="slider2">
-                <div class="carousel-caption">
-                    CoreGaming
-                </div>
-            </div>
-            <div class="item">
-                <img src="./assets/img/slider3.jpg" alt="slider3">
-                <div class="carousel-caption">
-                    TEC
-                </div>
-            </div>
+            <?php
+            $slides = [
+                ['src' => './assets/img/slider1.jpg', 'caption' => 'Emerick', 'active' => true],
+                ['src' => './assets/img/slider2.jpg', 'caption' => 'CoreGaming', 'active' => false],
+                ['src' => './assets/img/slider3.jpg', 'caption' => 'TEC', 'active' => false],
+            ];
+
+            foreach ($slides as $index => $slide) {
+                $activeClass = $slide['active'] ? 'active' : '';
+                echo "<div class='item $activeClass'>
+                        <img src='{$slide['src']}' alt='slider$index'>
+                        <div class='carousel-caption'>{$slide['caption']}</div>
+                      </div>";
+            }
+            ?>
         </div>
 
         <!-- Controls -->
@@ -50,65 +46,64 @@
             <span class="sr-only">Siguiente</span>
         </a>
     </section>
-    
 
     <section id="new-prod-index">    
-         <div class="container">
+        <div class="container">
             <div class="page-header">
                 <h1>Últimos <small>locales agregados</small></h1>
             </div>
             <div class="row">
-              	<?php
-                  include 'library/configServer.php';
-                  include 'library/consulSQL.php';
-                  $consulta= ejecutarSQL::consultar("SELECT * FROM producto WHERE Stock > 0 AND Estado='Activo' ORDER BY id DESC LIMIT 7");
-                  $totalproductos = mysqli_num_rows($consulta);
-                  if($totalproductos>0){
-                      while($fila=mysqli_fetch_array($consulta, MYSQLI_ASSOC)){
-                ?>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                     <div class="thumbnail">
-                       <img class="img-product" src="assets/img-products/<?php if($fila['Imagen']!="" && is_file("./assets/img-products/".$fila['Imagen'])){ echo $fila['Imagen']; }else{ echo "default.png"; } ?>">
-                       <div class="caption">
-                       		<h3><?php echo $fila['Marca']; ?></h3>
-                            <p><?php echo $fila['NombreProd']; ?></p>
-                            <?php if($fila['Descuento']>0): ?>
-                             <p>
-                             <?php
-                             $pref=number_format($fila['Precio']-($fila['Precio']*($fila['Descuento']/100)), 2, '.', '');
-                             echo $fila['Descuento']."% descuento: $".$pref; 
-                             ?>
-                             </p>
-                             <?php else: ?>
-                              <!-- <p>$<?php echo $fila['Precio']; ?></p> -->
-                             <?php endif; ?>
-                        <p class="text-center">
-                            <a href="infoProd.php?CodigoProd=<?php echo $fila['CodigoProd']; ?>" class="btn btn-primary btn-sm btn-raised btn-block"><i class="fa fa-plus"></i>&nbsp; Detalles</a>
-                        </p>
-                       </div>
-                     </div>
-                </div>     
                 <?php
-                     }   
-                  }else{
-                      echo '<h2>No hay locales registrados en la tienda</h2>';
-                  }  
-              	?>  
+                include 'library/configServer.php';
+                include 'library/consulSQL.php';
+
+                $consulta = ejecutarSQL::consultar("SELECT * FROM producto WHERE Stock > 0 AND Estado='Activo' ORDER BY id DESC LIMIT 7");
+                $totalproductos = mysqli_num_rows($consulta);
+
+                if ($totalproductos > 0) {
+                    while ($fila = mysqli_fetch_array($consulta, MYSQLI_ASSOC)) {
+                        $imagen = !empty($fila['Imagen']) && is_file("./assets/img-products/" . $fila['Imagen']) ? $fila['Imagen'] : "default.png";
+                        $precioFinal = $fila['Descuento'] > 0 ? number_format($fila['Precio'] - ($fila['Precio'] * ($fila['Descuento'] / 100)), 2, '.', '') : $fila['Precio'];
+
+                        echo "<div class='col-xs-12 col-sm-6 col-md-4'>
+                                <div class='thumbnail'>
+                                    <img class='img-product' src='assets/img-products/$imagen'>
+                                    <div class='caption'>
+                                        <h3>{$fila['Marca']}</h3>
+                                        <p>{$fila['NombreProd']}</p>";
+                        
+                        if ($fila['Descuento'] > 0) {
+                            echo "<p>{$fila['Descuento']}% descuento: \${$precioFinal}</p>";
+                        }
+
+                        echo "<p class='text-center'>
+                                <a href='infoProd.php?CodigoProd={$fila['CodigoProd']}' class='btn btn-primary btn-sm btn-raised btn-block'>
+                                    <i class='fa fa-plus'></i>&nbsp; Detalles
+                                </a>
+                              </p>
+                          </div>
+                        </div>
+                      </div>";
+                    }
+                } else {
+                    echo '<h2>No hay locales registrados en la tienda</h2>';
+                }
+                ?>  
             </div>
-         </div>
+        </div>
     </section>
+
     <section id="reg-info-index">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 text-center">
-                   <article style="margin-top:5%;">
+                    <article style="margin-top:5%;">
                         <p><i class="fa fa-users fa-4x"></i></p>
                         <h3>Registrate</h3>
                         <p>Registrate como cliente de <span class="tittles-pages-logo">CONNECT M</span> en un sencillo formulario para poder ingresar tu local</p>
                         <p><a href="registration.php" class="btn btn-info btn-raised btn-block">Registrarse</a></p>   
-                   </article>
+                    </article>
                 </div>
-
                 <div class="col-xs-12 col-sm-6">
                     <img src="assets/img/tv.png" alt="Smart-TV" class="img-responsive" style="width: 70%; display: block; margin: 0 auto;">
                 </div>

@@ -13,13 +13,13 @@ if(empty($_SESSION['carro'][$codigo]))
 	echo '<script>
         swal({
         title: "Producto agregado",
-        text: "Quieres ver el carrito de compras?",
+        text: "Quieres ver el carrito?",
         type: "info",
         showCancelButton: true,
         confirmButtonClass: "btn-success",
         cancelButtonClass: "btn-primary",
         confirmButtonText: "Si, ir al carrito",
-        cancelButtonText: "No, seguir comprando",
+        cancelButtonText: "No, seguir en la pagina",
         closeOnConfirm: false
         },
         function(){
@@ -30,7 +30,7 @@ if(empty($_SESSION['carro'][$codigo]))
 	echo '<script>
         swal({
         title: "ERROR",
-        text: "El producto ya fue agregado al carrito. Quieres ver el carrito de compras?",
+        text: "La membresia ya fue agregada al carrito. Quieres ver el carrito de compras?",
         type: "error",
         showCancelButton: true,
         confirmButtonClass: "btn-success",

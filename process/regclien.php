@@ -42,7 +42,7 @@ if(!$nitCliente=="" && !$nameCliente=="" && !$apeCliente=="" && !$dirCliente==""
                echo '<script>swal("ERROR", "Ocurrió un error inesperado, por favor intente nuevamente", "error");</script>';
             }
         }else{
-            echo '<script>swal("ERROR", "El Nuemero de cliente que ha ingresado ya está registrado en el sistema, por favor ingrese otro número de cliente", "error");</script>';
+            echo '<script>swal("ERROR", "El Numero de cliente que ha ingresado ya está registrado en el sistema, por favor ingrese otro número de cliente", "error");</script>';
         }
         mysqli_free_result($verificar);
     }else{
