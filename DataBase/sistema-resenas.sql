@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2024 a las 20:39:48
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 31-05-2024 a las 17:28:38
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,7 +43,10 @@ INSERT INTO `review_table` (`review_id`, `user_name`, `user_rating`, `user_revie
 (6, 'Pedro', 0, 'El sonido del teléfono funciona mal', 1621935691),
 (7, 'Juan', 3, 'La cámara tiene muy buena resolución pero las luces tienden a ser muy oscuras', 1621939888),
 (8, 'Sebastián', 1, 'La batería no me gusta, tiene muy bajo rendimiento', 1621940010),
-(9, 'Mauricio', 5, 'Es un excelente producto, un gran balance entre calidad y precio.', 1712898694);
+(9, 'Mauricio', 5, 'Es un excelente producto, un gran balance entre calidad y precio.', 1712898694),
+(10, 'Prueba', 4, 'prueba123', 1715392301),
+(11, 'Prueba2', 1, 'prueba2', 1715464654),
+(12, 'beto', 5, '1234', 1716253610);
 
 --
 -- Índices para tablas volcadas
@@ -63,7 +66,7 @@ ALTER TABLE `review_table`
 -- AUTO_INCREMENT de la tabla `review_table`
 --
 ALTER TABLE `review_table`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

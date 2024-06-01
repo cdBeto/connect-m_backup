@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-03-2018 a las 02:19:49
--- Versión del servidor: 10.1.24-MariaDB
--- Versión de PHP: 7.1.6
+-- Tiempo de generación: 31-05-2024 a las 17:28:48
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -53,6 +52,15 @@ CREATE TABLE `categoria` (
   `Descripcion` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`CodigoCat`, `Nombre`, `Descripcion`) VALUES
+('0003', 'prueba', 'prueba'),
+('1', 'PC', 'Pc de escritorio'),
+('2', 'Accesorios', 'Accesorios y componentes de pc, laptop y mas');
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +77,13 @@ CREATE TABLE `cliente` (
   `Telefono` varchar(20) NOT NULL,
   `Email` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`NIT`, `Nombre`, `NombreCompleto`, `Apellido`, `Clave`, `Direccion`, `Telefono`, `Email`) VALUES
+('001', 'beto', 'nombrePrueba', 'apellidoPrueba', '827ccb0eea8a706c4c34a16891f84e7b', 'calle falsa 123', '6461234567', 'correo_prueba@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -119,6 +134,14 @@ CREATE TABLE `producto` (
   `Estado` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id`, `CodigoProd`, `NombreProd`, `CodigoCat`, `Precio`, `Descuento`, `Modelo`, `Marca`, `Stock`, `NITProveedor`, `Imagen`, `Nombre`, `Estado`) VALUES
+(1, '01', 'Reparacion y mantenimiento', '1', '0.00', 0, 'Emerick', 'Emerick', 1, '01', '01.jpg', 'admin', 'Activo'),
+(2, '02', 'Tienda general en gaming', '2', '0.00', 0, 'CoreGaming', 'CoreGaming', 1, '02', '02.jpg', 'admin', 'Activo');
+
 -- --------------------------------------------------------
 
 --
@@ -132,6 +155,14 @@ CREATE TABLE `proveedor` (
   `Telefono` varchar(20) NOT NULL,
   `PaginaWeb` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`NITProveedor`, `NombreProveedor`, `Direccion`, `Telefono`, `PaginaWeb`) VALUES
+('01', 'Emerick', 'Plaza Acapulco, Av. Dr Pedro Loyola 225-8, Acapulco, 22890 Ensenada, B.C.', '6461372722', 'https://emericksupport.com/'),
+('02', 'CoreGaming', 'Av. Dr Pedro Loyola 330, Acapulco, 22890 Ensenada, B.C.', '6462448853', 'https://coregaming.com.mx/');
 
 -- --------------------------------------------------------
 
@@ -217,21 +248,25 @@ ALTER TABLE `venta`
 --
 ALTER TABLE `administrador`
   MODIFY `id` int(7) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `cuentabanco`
 --
 ALTER TABLE `cuentabanco`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
   MODIFY `NumPedido` int(20) NOT NULL AUTO_INCREMENT;
+
 --
 -- Restricciones para tablas volcadas
 --

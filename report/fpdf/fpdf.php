@@ -1,12 +1,4 @@
 <?php
-/*******************************************************************************
-* FPDF                                                                         *
-*                                                                              *
-* Version: 1.7                                                                 *
-* Date:    2011-06-18                                                          *
-* Author:  Olivier PLATHEY                                                     *
-*******************************************************************************/
-
 define('FPDF_VERSION','1.7');
 
 class FPDF
@@ -68,11 +60,7 @@ var $creator;            // creator
 var $AliasNbPages;       // alias for total number of pages
 var $PDFVersion;         // PDF version number
 
-/*******************************************************************************
-*                                                                              *
-*                               Public methods                                 *
-*                                                                              *
-*******************************************************************************/
+
 function FPDF($orientation='P', $unit='mm', $size='A4')
 {
 	// Some checks
@@ -1037,11 +1025,6 @@ function Output($name='', $dest='')
 	return '';
 }
 
-/*******************************************************************************
-*                                                                              *
-*                              Protected methods                               *
-*                                                                              *
-*******************************************************************************/
 function _dochecks()
 {
 	// Check availability of %F
